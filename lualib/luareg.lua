@@ -1,0 +1,126 @@
+--space.name = {address, upper, lower, size, default}
+audio = {}
+audio.REG_Audio_Source = {8980,1,0,1,0,"audio.REG_Audio_Source"} -- 0 = off, 1 = register, 2 = square, 3 = console
+audio.REG_Audio_Value = {8981,15,0,1,0,"audio.REG_Audio_Value"} -- mono only
+audio.REG_Audio_SquarePeriod = {8982,23,0,1,0,"audio.REG_Audio_SquarePeriod"} -- switching maxampl every 83,3ns * n
+ddrram = {}
+ddrram.Reg_Data = {134217728,31,0,134217728,0,"ddrram.Reg_Data"}   -- whole ram, memory mapped
+ddrram.Softmap_DS_WRAM = {134217728,31,0,1048576,0,"ddrram.Softmap_DS_WRAM"}   -- 4   Mbyte Data for WRam
+ddrram.Softmap_DS_Firmware = {136314880,31,0,65536,0,"ddrram.Softmap_DS_Firmware"}   -- 256Kbyte for Firmware
+ddrram.Softmap_DS_SaveRam = {138412032,31,0,1048576,0,"ddrram.Softmap_DS_SaveRam"}   -- 1Mbyte largest flash except Art Academy (8Mbyte)
+ddrram.Softmap_DS_SaveState = {140509184,31,0,2097152,0,"ddrram.Softmap_DS_SaveState"}   -- 8 Mbyte Data for Savestate
+ddrram.Softmap_DS_Gamerom = {201326592,31,0,67108864,0,"ddrram.Softmap_DS_Gamerom"}   -- 256 Mbyte Data for GameRom
+ddrram.Softmap_Exchange = {134217728 + 58720256,31,0,4194304,0,"ddrram.Softmap_Exchange"}   -- 16 Mbyte Data Exchange to PC, starting at MB96, Format: DW0: req DW1: Data Length(without Filename), DW2..n: Filename(null terminated), DWn+1..: Data
+ds = {}
+ds.Reg_DS_on = {1064960,0,0,1,0,"ds.Reg_DS_on"} -- on = 1
+ds.Reg_DS_lockspeed = {1064961,0,0,1,0,"ds.Reg_DS_lockspeed"} -- 1 = 100% speed
+ds.Reg_DS_freerunclock = {1064962,0,0,1,0,"ds.Reg_DS_freerunclock"} -- 1 = 66mhz internal with no halts
+ds.Reg_DS_enablecpu = {1064963,0,0,1,0,"ds.Reg_DS_enablecpu"}
+ds.Reg_DS_bootloader = {1064964,0,0,1,0,"ds.Reg_DS_bootloader"}
+ds.Reg_DS_PC9Entry = {1064965,31,0,1,0,"ds.Reg_DS_PC9Entry"}
+ds.Reg_DS_PC7Entry = {1064966,31,0,1,0,"ds.Reg_DS_PC7Entry"}
+ds.Reg_DS_ChipID = {1064967,31,0,1,0,"ds.Reg_DS_ChipID"}
+ds.Reg_DS_CyclePrecalc = {1064971,15,0,1,100,"ds.Reg_DS_CyclePrecalc"}
+ds.Reg_DS_CyclesMissing = {1064972,31,0,1,0,"ds.Reg_DS_CyclesMissing"}
+ds.Reg_DS_Bus9Addr = {1064980,27,0,1,0,"ds.Reg_DS_Bus9Addr"}
+ds.Reg_DS_Bus9RnW = {1064980,28,28,1,0,"ds.Reg_DS_Bus9RnW"}
+ds.Reg_DS_Bus9ACC = {1064980,30,29,1,0,"ds.Reg_DS_Bus9ACC"}
+ds.Reg_DS_Bus9WriteData = {1064981,31,0,1,0,"ds.Reg_DS_Bus9WriteData"}
+ds.Reg_DS_Bus9ReadData = {1064982,31,0,1,0,"ds.Reg_DS_Bus9ReadData"}
+ds.Reg_DS_Bus7Addr = {1064983,27,0,1,0,"ds.Reg_DS_Bus7Addr"}
+ds.Reg_DS_Bus7RnW = {1064983,28,28,1,0,"ds.Reg_DS_Bus7RnW"}
+ds.Reg_DS_Bus7ACC = {1064983,30,29,1,0,"ds.Reg_DS_Bus7ACC"}
+ds.Reg_DS_Bus7WriteData = {1064984,31,0,1,0,"ds.Reg_DS_Bus7WriteData"}
+ds.Reg_DS_Bus7ReadData = {1064985,31,0,1,0,"ds.Reg_DS_Bus7ReadData"}
+ds.Reg_DS_VsyncSpeed9 = {1064986,31,0,1,0,"ds.Reg_DS_VsyncSpeed9"}
+ds.Reg_DS_VsyncSpeed7 = {1064987,31,0,1,0,"ds.Reg_DS_VsyncSpeed7"}
+ds.Reg_DS_VsyncIdle9 = {1064988,31,0,1,0,"ds.Reg_DS_VsyncIdle9"}
+ds.Reg_DS_VsyncIdle7 = {1064989,31,0,1,0,"ds.Reg_DS_VsyncIdle7"}
+ds.Reg_DS_KeyUp = {1064990,0,0,1,0,"ds.Reg_DS_KeyUp"}
+ds.Reg_DS_KeyDown = {1064990,1,1,1,0,"ds.Reg_DS_KeyDown"}
+ds.Reg_DS_KeyLeft = {1064990,2,2,1,0,"ds.Reg_DS_KeyLeft"}
+ds.Reg_DS_KeyRight = {1064990,3,3,1,0,"ds.Reg_DS_KeyRight"}
+ds.Reg_DS_KeyA = {1064990,4,4,1,0,"ds.Reg_DS_KeyA"}
+ds.Reg_DS_KeyB = {1064990,5,5,1,0,"ds.Reg_DS_KeyB"}
+ds.Reg_DS_KeyL = {1064990,6,6,1,0,"ds.Reg_DS_KeyL"}
+ds.Reg_DS_KeyR = {1064990,7,7,1,0,"ds.Reg_DS_KeyR"}
+ds.Reg_DS_KeyStart = {1064990,8,8,1,0,"ds.Reg_DS_KeyStart"}
+ds.Reg_DS_KeySelect = {1064990,9,9,1,0,"ds.Reg_DS_KeySelect"}
+ds.Reg_DS_KeyX = {1064990,10,10,1,0,"ds.Reg_DS_KeyX"}
+ds.Reg_DS_KeyY = {1064990,11,11,1,0,"ds.Reg_DS_KeyY"}
+ds.Reg_DS_Touch = {1064990,12,12,1,0,"ds.Reg_DS_Touch"}
+ds.Reg_DS_TouchX = {1064990,23,16,1,0,"ds.Reg_DS_TouchX"}
+ds.Reg_DS_TouchY = {1064990,31,24,1,0,"ds.Reg_DS_TouchY"}
+ds.Reg_DS_cputurbo = {1064995,0,0,1,0,"ds.Reg_DS_cputurbo"} -- 1 = cpu free running
+ds.Reg_DS_SaveState = {1064996,0,0,1,0,"ds.Reg_DS_SaveState"}
+ds.Reg_DS_LoadState = {1064997,0,0,1,0,"ds.Reg_DS_LoadState"}
+ds.Reg_DS_DebugCycling = {1065000,31,0,1,0,"ds.Reg_DS_DebugCycling"}
+ds.Reg_DS_DebugCPU9 = {1065001,31,0,1,0,"ds.Reg_DS_DebugCPU9"}
+ds.Reg_DS_DebugCPU7 = {1065002,31,0,1,0,"ds.Reg_DS_DebugCPU7"}
+ds.Reg_DS_DebugDMA9 = {1065003,31,0,1,0,"ds.Reg_DS_DebugDMA9"}
+ds.Reg_DS_DebugDMA7 = {1065004,31,0,1,0,"ds.Reg_DS_DebugDMA7"}
+external = {}
+external.Reg_Switches = {8192,7,0,1,0,"external.Reg_Switches"}  -- switches on DE2
+external.Reg_Keys = {8193,4,0,1,0,"external.Reg_Keys"}  -- keys on DE2
+external.Reg_LED = {8200,7,0,1,0,"external.Reg_LED"} -- green LEDs on DE2
+gameboy = {}
+gameboy.Reg_GBA_on = {1056768,0,0,1,0,"gameboy.Reg_GBA_on"} -- on = 1
+gameboy.Reg_GBA_lockspeed = {1056769,0,0,1,0,"gameboy.Reg_GBA_lockspeed"} -- 1 = 100% speed
+gameboy.Reg_GBA_flash_1m = {1056770,0,0,1,0,"gameboy.Reg_GBA_flash_1m"}
+gameboy.Reg_GBA_CyclePrecalc = {1056771,15,0,1,100,"gameboy.Reg_GBA_CyclePrecalc"}
+gameboy.Reg_GBA_CyclesMissing = {1056772,31,0,1,0,"gameboy.Reg_GBA_CyclesMissing"}
+gameboy.Reg_GBA_BusAddr = {1056773,27,0,1,0,"gameboy.Reg_GBA_BusAddr"}
+gameboy.Reg_GBA_BusRnW = {1056773,28,28,1,0,"gameboy.Reg_GBA_BusRnW"}
+gameboy.Reg_GBA_BusACC = {1056773,30,29,1,0,"gameboy.Reg_GBA_BusACC"}
+gameboy.Reg_GBA_BusWriteData = {1056774,31,0,1,0,"gameboy.Reg_GBA_BusWriteData"}
+gameboy.Reg_GBA_BusReadData = {1056775,31,0,1,0,"gameboy.Reg_GBA_BusReadData"}
+gameboy.Reg_GBA_MaxPakAddr = {1056776,24,0,1,0,"gameboy.Reg_GBA_MaxPakAddr"}
+gameboy.Reg_GBA_VsyncSpeed = {1056777,31,0,1,0,"gameboy.Reg_GBA_VsyncSpeed"}
+gameboy.Reg_GBA_KeyUp = {1056778,0,0,1,0,"gameboy.Reg_GBA_KeyUp"}
+gameboy.Reg_GBA_KeyDown = {1056778,1,1,1,0,"gameboy.Reg_GBA_KeyDown"}
+gameboy.Reg_GBA_KeyLeft = {1056778,2,2,1,0,"gameboy.Reg_GBA_KeyLeft"}
+gameboy.Reg_GBA_KeyRight = {1056778,3,3,1,0,"gameboy.Reg_GBA_KeyRight"}
+gameboy.Reg_GBA_KeyA = {1056778,4,4,1,0,"gameboy.Reg_GBA_KeyA"}
+gameboy.Reg_GBA_KeyB = {1056778,5,5,1,0,"gameboy.Reg_GBA_KeyB"}
+gameboy.Reg_GBA_KeyL = {1056778,6,6,1,0,"gameboy.Reg_GBA_KeyL"}
+gameboy.Reg_GBA_KeyR = {1056778,7,7,1,0,"gameboy.Reg_GBA_KeyR"}
+gameboy.Reg_GBA_KeyStart = {1056778,8,8,1,0,"gameboy.Reg_GBA_KeyStart"}
+gameboy.Reg_GBA_KeySelect = {1056778,9,9,1,0,"gameboy.Reg_GBA_KeySelect"}
+gameboy.Reg_GBA_cputurbo = {1056780,0,0,1,0,"gameboy.Reg_GBA_cputurbo"} -- 1 = cpu free running, all other 16 mhz
+gameboy.Reg_GBA_SramFlashEna = {1056781,0,0,1,0,"gameboy.Reg_GBA_SramFlashEna"} -- 1 = enabled, 0 = disable (disable for copy protection in some games)
+gameboy.Reg_GBA_MemoryRemap = {1056782,0,0,1,0,"gameboy.Reg_GBA_MemoryRemap"} -- 1 = enabled, 0 = disable (enable for copy protection in some games)
+gameboy.Reg_GBA_SaveState = {1056783,0,0,1,0,"gameboy.Reg_GBA_SaveState"}
+gameboy.Reg_GBA_LoadState = {1056784,0,0,1,0,"gameboy.Reg_GBA_LoadState"}
+gameboy.Reg_GBA_FrameBlend = {1056785,0,0,1,0,"gameboy.Reg_GBA_FrameBlend"} -- mix last and current frame
+gameboy.Reg_GBA_Pixelshade = {1056786,2,0,1,0,"gameboy.Reg_GBA_Pixelshade"} -- pixel shade 1..4, 0 = off
+gameboy.Reg_GBA_Rewind_on = {1056787,0,0,1,0,"gameboy.Reg_GBA_Rewind_on"}
+gameboy.Reg_GBA_Rewind_active = {1056788,0,0,1,0,"gameboy.Reg_GBA_Rewind_active"}
+gameboy.Reg_GBA_DEBUG_CPU_PC = {1056800,31,0,1,0,"gameboy.Reg_GBA_DEBUG_CPU_PC"}
+gameboy.Reg_GBA_DEBUG_CPU_MIX = {1056801,31,0,1,0,"gameboy.Reg_GBA_DEBUG_CPU_MIX"}
+gameboy.Reg_GBA_DEBUG_IRQ = {1056802,31,0,1,0,"gameboy.Reg_GBA_DEBUG_IRQ"}
+gameboy.Reg_GBA_DEBUG_DMA = {1056803,31,0,1,0,"gameboy.Reg_GBA_DEBUG_DMA"}
+gameboy.Reg_GBA_DEBUG_MEM = {1056804,31,0,1,0,"gameboy.Reg_GBA_DEBUG_MEM"}
+gameboy.Reg_GBA_CHEAT_FLAGS = {1056810,31,0,1,0,"gameboy.Reg_GBA_CHEAT_FLAGS"}
+gameboy.Reg_GBA_CHEAT_ADDRESS = {1056811,31,0,1,0,"gameboy.Reg_GBA_CHEAT_ADDRESS"}
+gameboy.Reg_GBA_CHEAT_COMPARE = {1056812,31,0,1,0,"gameboy.Reg_GBA_CHEAT_COMPARE"}
+gameboy.Reg_GBA_CHEAT_REPLACE = {1056813,31,0,1,0,"gameboy.Reg_GBA_CHEAT_REPLACE"}
+gameboy.Reg_GBA_CHEAT_RESET = {1056814,0,0,1,0,"gameboy.Reg_GBA_CHEAT_RESET"}
+gpu = {}
+gpu.Reg_Framebuffer_PosX = {16410,9,0,1,0,"gpu.Reg_Framebuffer_PosX"}  -- startpos of embedded image
+gpu.Reg_Framebuffer_PosY = {16410,25,16,1,0,"gpu.Reg_Framebuffer_PosY"}  -- startpos of embedded image
+gpu.Reg_Framebuffer_SizeX = {16411,8,0,1,0,"gpu.Reg_Framebuffer_SizeX"}  -- size of data in framebuffer
+gpu.Reg_Framebuffer_SizeY = {16411,16,9,1,0,"gpu.Reg_Framebuffer_SizeY"}  -- size of data in framebuffer
+gpu.Reg_Framebuffer_Scale = {16411,20,17,1,0,"gpu.Reg_Framebuffer_Scale"}  -- scale factor
+gpu.Reg_Framebuffer_LCD = {16411,21,21,1,0,"gpu.Reg_Framebuffer_LCD"}  -- LDC effect
+gpu.Reg_Framebuffer2_PosX = {16420,9,0,1,0,"gpu.Reg_Framebuffer2_PosX"}  -- startpos of embedded image
+gpu.Reg_Framebuffer2_PosY = {16420,25,16,1,0,"gpu.Reg_Framebuffer2_PosY"}  -- startpos of embedded image
+gpu.Reg_Framebuffer2_SizeX = {16421,8,0,1,0,"gpu.Reg_Framebuffer2_SizeX"}  -- size of data in framebuffer
+gpu.Reg_Framebuffer2_SizeY = {16421,16,9,1,0,"gpu.Reg_Framebuffer2_SizeY"}  -- size of data in framebuffer
+gpu.Reg_Framebuffer2_Scale = {16421,20,17,1,0,"gpu.Reg_Framebuffer2_Scale"}  -- scale factor
+gpu.Reg_Framebuffer2_LCD = {16421,21,21,1,0,"gpu.Reg_Framebuffer2_LCD"}  -- LDC effect
+test = {}
+test.Reg_Testreg = {1,31,0,1,0,"test.Reg_Testreg"} -- 32 bit testregister
+test.Reg_Errorflags = {2,31,0,1,0,"test.Reg_Errorflags"} -- Bit0: Bus Timeout
+test.Reg_Simu = {3,0,0,1,0,"test.Reg_Simu"} -- 1 when in simulation, 0 on HW
+test.Reg_DDRLatency = {16,15,0,1,0,"test.Reg_DDRLatency"} -- 1 when in simulation, 0 on HW
+test.Reg_Testblock = {128,0,0,128,0,"test.Reg_Testblock"} -- testblock
